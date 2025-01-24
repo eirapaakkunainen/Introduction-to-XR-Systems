@@ -1,1 +1,45 @@
-{}
+{
+    "name": "quitControl",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "bbc093e0-787d-476f-8e71-f9b2622f4c61",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "e648560e-2209-4292-ad88-8d544f372b76",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b6005805-0f56-4979-b418-8e03b33bbabb",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ab93964-53e1-4622-9492-58496620cbfa",
+                    "path": "XR > XRI RightHand > PrimaryButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
