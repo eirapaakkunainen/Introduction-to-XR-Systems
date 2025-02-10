@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2544
     height: 1333
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16
+  controlID: 107
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -69,8 +69,8 @@ MonoBehaviour:
     y: 0
     width: 723
     height: 1283
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 38
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18
+  controlID: 39
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -325,7 +325,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Magnifying Glass/BaseTexture
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -333,15 +333,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets
+  - Assets/Magnifying Glass/BaseTexture
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: C:\Users\epaakkun21\Documents\HW1\Introduction to XR HW1
+  m_LastProjectPath: C:\Users\epaakkun21\Documents\GitHub\Introduction-to-XR-Systems\Introduction
+    to XR HW1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 12060000
-    m_LastClickedID: 1554
+    m_SelectedIDs: 62070000
+    m_LastClickedID: 1890
     m_ExpandedIDs: 00000000120600000207000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -398,7 +399,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000000000000a8200003cce0000daf00000
+    m_ExpandedInstanceIDs: c62300000a8200003cce0000daf0000000000000def00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,7 +465,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
@@ -512,9 +513,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 22f40000
-      m_LastClickedID: 62498
-      m_ExpandedIDs: 4a27feffd827feff6035feff6a35feff8c35feffb035feffb235feffbe37feffd0f30000e8f30000ecf300004af40000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 8235feffa635feffa835feffb237feffd0f30000def300004ef40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -895,9 +896,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.8660249, y: 8.967788, z: 8.592566}
+    m_Target: {x: -0.7568672, y: 10.498983, z: 5.989962}
     speed: 2
-    m_Value: {x: -0.8660249, y: 8.967788, z: 8.592566}
+    m_Value: {x: -0.7568672, y: 10.498983, z: 5.989962}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -943,13 +944,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.12709904, y: -0.02975132, z: 0.0038142907, w: 0.9914454}
+    m_Target: {x: -0.044965047, y: -0.031463545, z: -0.0013713583, w: 0.9985124}
     speed: 2
-    m_Value: {x: 0.12559238, y: -0.034218743, z: 0.0043348316, w: 0.9914822}
+    m_Value: {x: -0.044962026, y: -0.032960612, z: -0.0014387752, w: 0.99844384}
   m_Size:
-    m_Target: 5.831841
+    m_Target: 3.510103
     speed: 2
-    m_Value: 5.580709
+    m_Value: 3.6755004
   m_Ortho:
     m_Target: 0
     speed: 2

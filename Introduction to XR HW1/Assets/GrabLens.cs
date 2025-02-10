@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 
 public class GrabLens : MonoBehaviour
 {
+    public Camera magnifyingGlassCamera;
     public InputActionReference grabLens;
     public Transform cubeAsHand;
-
+    public float zoomedFOV = 25f;
+    public float normalFOV = 60f;
     private GameObject magnifyingLens = null;
     private bool lensOnHand = false;
  
@@ -47,6 +49,12 @@ public class GrabLens : MonoBehaviour
             //lens is on the hand, ungrab the lens 
             magnifyingLens.transform.SetParent(null);
             rigidbody.isKinematic = false;
+
+            //when lens is ungrabbed, FOV is set back to normal
+            if (magnifyingGlassCamera != null)
+            {
+                magnifyingGlassCamera.fieldOfView = normalFOV;
+            }
         }
         else
         {
@@ -55,6 +63,13 @@ public class GrabLens : MonoBehaviour
             magnifyingLens.transform.localPosition = Vector3.zero;
             magnifyingLens.transform.localRotation = Quaternion.identity;
             rigidbody.isKinematic = true;
+
+            //when lens is grabbed, zoom 
+            if (magnifyingGlassCamera != null)
+            {
+                magnifyingGlassCamera.fieldOfView = zoomedFOV;
+            }
+
         }
 
         lensOnHand = !lensOnHand;
