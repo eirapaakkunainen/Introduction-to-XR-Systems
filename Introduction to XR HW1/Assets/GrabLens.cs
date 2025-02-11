@@ -9,15 +9,22 @@ public class GrabLens : MonoBehaviour
     public Camera magnifyingGlassCamera;
     public InputActionReference grabLens;
     public Transform cubeAsHand;
-    public float zoomedFOV = 25f;
-    public float normalFOV = 60f;
+    public RenderTexture zoomedRenderTexure;
+    public RenderTexture normalRenderTexture;
     private GameObject magnifyingLens = null;
     private bool lensOnHand = false;
+    private Material lensMaterial;
  
     void Start()
     {
         grabLens.action.Enable();
         grabLens.action.performed += (ctx) => GrabOrUngrab();
+
+        if (magnifyingLens != null)
+        {
+            lensMaterial = magnifyingLens.GetComponent<Renderer>().material;
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +32,7 @@ public class GrabLens : MonoBehaviour
         if (other.CompareTag("Grabbable"))
         {
             magnifyingLens = other.gameObject;
+            lensMaterial = magnifyingLens.GetComponent<Renderer>().material;
         }
     }
 
@@ -50,10 +58,10 @@ public class GrabLens : MonoBehaviour
             magnifyingLens.transform.SetParent(null);
             rigidbody.isKinematic = false;
 
-            //when lens is ungrabbed, FOV is set back to normal
-            if (magnifyingGlassCamera != null)
+            //when lens is ungrabbed, render texture normal
+            if (lensMaterial != null)
             {
-                magnifyingGlassCamera.fieldOfView = normalFOV;
+                lensMaterial.mainTexture = normalRenderTexture;
             }
         }
         else
@@ -65,9 +73,9 @@ public class GrabLens : MonoBehaviour
             rigidbody.isKinematic = true;
 
             //when lens is grabbed, zoom 
-            if (magnifyingGlassCamera != null)
+            if (lensMaterial != null)
             {
-                magnifyingGlassCamera.fieldOfView = zoomedFOV;
+                lensMaterial.mainTexture = zoomedRenderTexure;
             }
 
         }
