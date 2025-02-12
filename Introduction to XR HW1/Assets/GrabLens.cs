@@ -7,10 +7,14 @@ using UnityEngine.InputSystem;
 public class GrabLens : MonoBehaviour
 {
     public Camera magnifyingGlassCamera;
+    public Transform mainCamera;
+
     public InputActionReference grabLens;
     public Transform cubeAsHand;
+
     public RenderTexture zoomedRenderTexure;
     public RenderTexture normalRenderTexture;
+
     private GameObject magnifyingLens = null;
     private bool lensOnHand = false;
     private Material lensMaterial;
@@ -24,6 +28,8 @@ public class GrabLens : MonoBehaviour
         {
             lensMaterial = magnifyingLens.GetComponent<Renderer>().material;
         }
+
+        mainCamera = Camera.main.transform;
         
     }
 
@@ -59,6 +65,11 @@ public class GrabLens : MonoBehaviour
             rigidbody.isKinematic = false;
 
             //when lens is ungrabbed, render texture normal
+            if (magnifyingGlassCamera != null)
+            {
+                magnifyingGlassCamera.targetTexture = normalRenderTexture;
+            }
+
             if (lensMaterial != null)
             {
                 lensMaterial.mainTexture = normalRenderTexture;
@@ -73,6 +84,12 @@ public class GrabLens : MonoBehaviour
             rigidbody.isKinematic = true;
 
             //when lens is grabbed, zoom 
+
+            if (magnifyingGlassCamera != null)
+            {
+                magnifyingGlassCamera.targetTexture = normalRenderTexture;
+            }
+
             if (lensMaterial != null)
             {
                 lensMaterial.mainTexture = zoomedRenderTexure;
@@ -81,5 +98,17 @@ public class GrabLens : MonoBehaviour
         }
 
         lensOnHand = !lensOnHand;
+    }
+
+    private void Update()
+    {
+        //ensure that the lens is on hand, lens and the lenscamera are not null
+        if(lensOnHand && magnifyingGlassCamera != null && magnifyingLens != null)
+        {
+            magnifyingGlassCamera.transform.position = magnifyingLens.transform.position;
+
+            //rotate according to the player's view (main camera)
+            magnifyingGlassCamera.transform.rotation = Quaternion.LookRotation(mainCamera.forward, Vector3.up);
+        }
     }
 }

@@ -3,7 +3,14 @@ guid: f9216afba2f522d45b95b74082bf4e1e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - magnifyingGlassCamera: {instanceID: 0}
+  - mainCamera: {instanceID: 0}
+  - grabLens: {instanceID: 0}
+  - cubeAsHand: {instanceID: 0}
+  - zoomedRenderTexure: {fileID: 8400000, guid: 0e3ea40fc3c777447993fc027d03b256,
+      type: 2}
+  - normalRenderTexture: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
