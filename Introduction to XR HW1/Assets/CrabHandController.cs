@@ -6,25 +6,22 @@ using UnityEngine.XR;
 public class CrabHandController : MonoBehaviour
 {
     private Animator animator;
-    private bool isClawOpen = false;
-
-    private InputDevice leftController;
+    private bool isClawOpen = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        animator.SetBool("isClawOpen", isClawOpen);
 
-        leftController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (leftController.isValid)
+        if (Input.GetKeyDown(KeyCode.A))
         {
             isClawOpen = !isClawOpen;
-
             animator.SetBool("isClawOpen", isClawOpen);
         }
     }
