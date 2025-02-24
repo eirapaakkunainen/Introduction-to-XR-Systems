@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
 public class CrabHandController : MonoBehaviour
 {
     private Animator animator;
-    private bool isClawOpen = true;
+    private bool isClawOpen = false;
+    public InputActionReference action;
 
     // Start is called before the first frame update
     void Start()
@@ -14,15 +16,13 @@ public class CrabHandController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         animator.SetBool("isClawOpen", isClawOpen);
 
-    }
+        action.action.Enable();
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
+        action.action.performed += (ctx) =>
         {
             isClawOpen = !isClawOpen;
             animator.SetBool("isClawOpen", isClawOpen);
-        }
+        };
+
     }
 }
