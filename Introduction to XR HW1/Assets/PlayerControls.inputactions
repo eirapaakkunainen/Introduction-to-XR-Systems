@@ -1,0 +1,45 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "Sciccors",
+            "id": "69216272-d7c3-4650-a9b4-b3c9999e6ad0",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "088bd067-e67f-4193-b40c-b2ad6425a6a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bfe30c80-8d49-4315-b982-49b33e0dbd7d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f8126867-dcd2-4b2d-b082-b811e00a4878",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
